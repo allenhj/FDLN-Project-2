@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dlnd_image_classification</title><script src="https://unpkg.com/jupyter-js-widgets@2.0.*/dist/embed.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>dlnd_image_classification</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12217,7 +12217,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12274,7 +12274,7 @@ height=250
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -12286,7 +12286,7 @@ height=250
 <span class="sd">    : return: Tensor for image input.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># TODO: Implement Function</span>
-    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">placeholder</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image_shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">neural_net_label_input</span><span class="p">(</span><span class="n">n_classes</span><span class="p">):</span>
@@ -12329,7 +12329,8 @@ height=250
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Image Input Tests Passed.
+<pre>(32, 32, 3)
+Image Input Tests Passed.
 Label Input Tests Passed.
 Keep Prob Tests Passed.
 </pre>
@@ -12366,7 +12367,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conv2d_maxpool</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">conv_num_outputs</span><span class="p">,</span> <span class="n">conv_ksize</span><span class="p">,</span> <span class="n">conv_strides</span><span class="p">,</span> <span class="n">pool_ksize</span><span class="p">,</span> <span class="n">pool_strides</span><span class="p">):</span>
@@ -12442,7 +12443,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">):</span>
@@ -12495,7 +12496,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fully_conn</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -12553,7 +12554,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">output</span><span class="p">(</span><span class="n">x_tensor</span><span class="p">,</span> <span class="n">num_outputs</span><span class="p">):</span>
@@ -12616,7 +12617,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">conv_net</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">):</span>
@@ -12702,7 +12703,8 @@ Keep Prob Tests Passed.
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Neural Network Built!
+<pre>(32, 32, 3)
+Neural Network Built!
 </pre>
 </div>
 </div>
@@ -12730,7 +12732,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train_neural_network</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">keep_probability</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">):</span>
@@ -12787,7 +12789,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">feature_batch</span><span class="p">,</span> <span class="n">label_batch</span><span class="p">,</span> <span class="n">cost</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">):</span>
@@ -12843,13 +12845,13 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Tune Parameters</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.75</span>
+<span class="n">keep_probability</span> <span class="o">=</span> <span class="mf">0.5</span>
 </pre></div>
 
 </div>
@@ -12869,7 +12871,7 @@ Keep Prob Tests Passed.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12902,107 +12904,70 @@ Keep Prob Tests Passed.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Checking the Training on a Single Batch...
-Epoch  1, CIFAR-10 Batch 1:  Loss:     1.9373, Validation Accuracy: 0.316600
-Epoch  2, CIFAR-10 Batch 1:  Loss:     1.8427, Validation Accuracy: 0.358600
-Epoch  3, CIFAR-10 Batch 1:  Loss:     1.6306, Validation Accuracy: 0.399000
-Epoch  4, CIFAR-10 Batch 1:  Loss:     1.5673, Validation Accuracy: 0.416400
-Epoch  5, CIFAR-10 Batch 1:  Loss:     1.2579, Validation Accuracy: 0.436200
-Epoch  6, CIFAR-10 Batch 1:  Loss:     1.1847, Validation Accuracy: 0.452800
-Epoch  7, CIFAR-10 Batch 1:  Loss:     1.1172, Validation Accuracy: 0.467200
-Epoch  8, CIFAR-10 Batch 1:  Loss:     0.9765, Validation Accuracy: 0.468200
-Epoch  9, CIFAR-10 Batch 1:  Loss:     1.0438, Validation Accuracy: 0.448000
-Epoch 10, CIFAR-10 Batch 1:  Loss:     0.9039, Validation Accuracy: 0.454400
-Epoch 11, CIFAR-10 Batch 1:  Loss:     0.8031, Validation Accuracy: 0.459200
-Epoch 12, CIFAR-10 Batch 1:  Loss:     0.7990, Validation Accuracy: 0.461200
-Epoch 13, CIFAR-10 Batch 1:  Loss:     0.6046, Validation Accuracy: 0.492400
-Epoch 14, CIFAR-10 Batch 1:  Loss:     0.6508, Validation Accuracy: 0.470200
-Epoch 15, CIFAR-10 Batch 1:  Loss:     0.5589, Validation Accuracy: 0.483800
-Epoch 16, CIFAR-10 Batch 1:  Loss:     0.4821, Validation Accuracy: 0.496000
-Epoch 17, CIFAR-10 Batch 1:  Loss:     0.5232, Validation Accuracy: 0.483800
-Epoch 18, CIFAR-10 Batch 1:  Loss:     0.4137, Validation Accuracy: 0.510000
-Epoch 19, CIFAR-10 Batch 1:  Loss:     0.3598, Validation Accuracy: 0.502800
-Epoch 20, CIFAR-10 Batch 1:  Loss:     0.4406, Validation Accuracy: 0.498600
-Epoch 21, CIFAR-10 Batch 1:  Loss:     0.3152, Validation Accuracy: 0.510800
-Epoch 22, CIFAR-10 Batch 1:  Loss:     0.3295, Validation Accuracy: 0.502200
-Epoch 23, CIFAR-10 Batch 1:  Loss:     0.2706, Validation Accuracy: 0.536400
-Epoch 24, CIFAR-10 Batch 1:  Loss:     0.2169, Validation Accuracy: 0.524400
-Epoch 25, CIFAR-10 Batch 1:  Loss:     0.1827, Validation Accuracy: 0.527400
-Epoch 26, CIFAR-10 Batch 1:  Loss:     0.1602, Validation Accuracy: 0.527000
-Epoch 27, CIFAR-10 Batch 1:  Loss:     0.2076, Validation Accuracy: 0.533800
-Epoch 28, CIFAR-10 Batch 1:  Loss:     0.1999, Validation Accuracy: 0.524000
-Epoch 29, CIFAR-10 Batch 1:  Loss:     0.1050, Validation Accuracy: 0.530800
-Epoch 30, CIFAR-10 Batch 1:  Loss:     0.1396, Validation Accuracy: 0.542400
-Epoch 31, CIFAR-10 Batch 1:  Loss:     0.0873, Validation Accuracy: 0.542600
-Epoch 32, CIFAR-10 Batch 1:  Loss:     0.0835, Validation Accuracy: 0.539400
-Epoch 33, CIFAR-10 Batch 1:  Loss:     0.0844, Validation Accuracy: 0.524600
-Epoch 34, CIFAR-10 Batch 1:  Loss:     0.0821, Validation Accuracy: 0.537400
-Epoch 35, CIFAR-10 Batch 1:  Loss:     0.0490, Validation Accuracy: 0.533200
-Epoch 36, CIFAR-10 Batch 1:  Loss:     0.0460, Validation Accuracy: 0.550400
-Epoch 37, CIFAR-10 Batch 1:  Loss:     0.0294, Validation Accuracy: 0.539000
-Epoch 38, CIFAR-10 Batch 1:  Loss:     0.0429, Validation Accuracy: 0.535800
-Epoch 39, CIFAR-10 Batch 1:  Loss:     0.0197, Validation Accuracy: 0.539800
-Epoch 40, CIFAR-10 Batch 1:  Loss:     0.0096, Validation Accuracy: 0.533800
-Epoch 41, CIFAR-10 Batch 1:  Loss:     0.0255, Validation Accuracy: 0.533800
-Epoch 42, CIFAR-10 Batch 1:  Loss:     0.0578, Validation Accuracy: 0.516600
-Epoch 43, CIFAR-10 Batch 1:  Loss:     0.0170, Validation Accuracy: 0.520800
-Epoch 44, CIFAR-10 Batch 1:  Loss:     0.0172, Validation Accuracy: 0.514400
-Epoch 45, CIFAR-10 Batch 1:  Loss:     0.0148, Validation Accuracy: 0.519800
-Epoch 46, CIFAR-10 Batch 1:  Loss:     0.0330, Validation Accuracy: 0.512600
-Epoch 47, CIFAR-10 Batch 1:  Loss:     0.0160, Validation Accuracy: 0.544200
-Epoch 48, CIFAR-10 Batch 1:  Loss:     0.0175, Validation Accuracy: 0.543600
-Epoch 49, CIFAR-10 Batch 1:  Loss:     0.0134, Validation Accuracy: 0.540800
-Epoch 50, CIFAR-10 Batch 1:  Loss:     0.0055, Validation Accuracy: 0.543800
-Epoch 51, CIFAR-10 Batch 1:  Loss:     0.0145, Validation Accuracy: 0.542600
-Epoch 52, CIFAR-10 Batch 1:  Loss:     0.0026, Validation Accuracy: 0.551200
-Epoch 53, CIFAR-10 Batch 1:  Loss:     0.0026, Validation Accuracy: 0.550000
-Epoch 54, CIFAR-10 Batch 1:  Loss:     0.0079, Validation Accuracy: 0.538600
-Epoch 55, CIFAR-10 Batch 1:  Loss:     0.0081, Validation Accuracy: 0.542400
-Epoch 56, CIFAR-10 Batch 1:  Loss:     0.0059, Validation Accuracy: 0.536400
-Epoch 57, CIFAR-10 Batch 1:  Loss:     0.0051, Validation Accuracy: 0.538400
-Epoch 58, CIFAR-10 Batch 1:  Loss:     0.0047, Validation Accuracy: 0.549200
-Epoch 59, CIFAR-10 Batch 1:  Loss:     0.0051, Validation Accuracy: 0.548400
-Epoch 60, CIFAR-10 Batch 1:  Loss:     0.0095, Validation Accuracy: 0.547400
-Epoch 61, CIFAR-10 Batch 1:  Loss:     0.0083, Validation Accuracy: 0.552800
-Epoch 62, CIFAR-10 Batch 1:  Loss:     0.0064, Validation Accuracy: 0.544400
-Epoch 63, CIFAR-10 Batch 1:  Loss:     0.0110, Validation Accuracy: 0.540800
-Epoch 64, CIFAR-10 Batch 1:  Loss:     0.0006, Validation Accuracy: 0.551000
-Epoch 65, CIFAR-10 Batch 1:  Loss:     0.0078, Validation Accuracy: 0.543600
-Epoch 66, CIFAR-10 Batch 1:  Loss:     0.0008, Validation Accuracy: 0.552200
-Epoch 67, CIFAR-10 Batch 1:  Loss:     0.0015, Validation Accuracy: 0.543400
-Epoch 68, CIFAR-10 Batch 1:  Loss:     0.0012, Validation Accuracy: 0.543400
-Epoch 69, CIFAR-10 Batch 1:  Loss:     0.0288, Validation Accuracy: 0.550800
-Epoch 70, CIFAR-10 Batch 1:  Loss:     0.0016, Validation Accuracy: 0.548000
-Epoch 71, CIFAR-10 Batch 1:  Loss:     0.0034, Validation Accuracy: 0.561600
-Epoch 72, CIFAR-10 Batch 1:  Loss:     0.0013, Validation Accuracy: 0.541600
-Epoch 73, CIFAR-10 Batch 1:  Loss:     0.0014, Validation Accuracy: 0.546400
-Epoch 74, CIFAR-10 Batch 1:  Loss:     0.0007, Validation Accuracy: 0.547000
-Epoch 75, CIFAR-10 Batch 1:  Loss:     0.0041, Validation Accuracy: 0.554800
-Epoch 76, CIFAR-10 Batch 1:  Loss:     0.0004, Validation Accuracy: 0.554200
-Epoch 77, CIFAR-10 Batch 1:  Loss:     0.0010, Validation Accuracy: 0.528800
-Epoch 78, CIFAR-10 Batch 1:  Loss:     0.0019, Validation Accuracy: 0.544800
-Epoch 79, CIFAR-10 Batch 1:  Loss:     0.0013, Validation Accuracy: 0.535200
-Epoch 80, CIFAR-10 Batch 1:  Loss:     0.0002, Validation Accuracy: 0.558200
-Epoch 81, CIFAR-10 Batch 1:  Loss:     0.0020, Validation Accuracy: 0.539600
-Epoch 82, CIFAR-10 Batch 1:  Loss:     0.0018, Validation Accuracy: 0.558600
-Epoch 83, CIFAR-10 Batch 1:  Loss:     0.0009, Validation Accuracy: 0.553400
-Epoch 84, CIFAR-10 Batch 1:  Loss:     0.0016, Validation Accuracy: 0.540000
-Epoch 85, CIFAR-10 Batch 1:  Loss:     0.0006, Validation Accuracy: 0.552800
-Epoch 86, CIFAR-10 Batch 1:  Loss:     0.0021, Validation Accuracy: 0.547000
-Epoch 87, CIFAR-10 Batch 1:  Loss:     0.0026, Validation Accuracy: 0.549800
-Epoch 88, CIFAR-10 Batch 1:  Loss:     0.0008, Validation Accuracy: 0.548000
-Epoch 89, CIFAR-10 Batch 1:  Loss:     0.0004, Validation Accuracy: 0.555600
-Epoch 90, CIFAR-10 Batch 1:  Loss:     0.0004, Validation Accuracy: 0.552000
-Epoch 91, CIFAR-10 Batch 1:  Loss:     0.0002, Validation Accuracy: 0.566400
-Epoch 92, CIFAR-10 Batch 1:  Loss:     0.0003, Validation Accuracy: 0.550800
-Epoch 93, CIFAR-10 Batch 1:  Loss:     0.0010, Validation Accuracy: 0.561400
-Epoch 94, CIFAR-10 Batch 1:  Loss:     0.0001, Validation Accuracy: 0.544600
-Epoch 95, CIFAR-10 Batch 1:  Loss:     0.0006, Validation Accuracy: 0.556600
-Epoch 96, CIFAR-10 Batch 1:  Loss:     0.0006, Validation Accuracy: 0.554800
-Epoch 97, CIFAR-10 Batch 1:  Loss:     0.0007, Validation Accuracy: 0.549000
-Epoch 98, CIFAR-10 Batch 1:  Loss:     0.0084, Validation Accuracy: 0.544200
-Epoch 99, CIFAR-10 Batch 1:  Loss:     0.0032, Validation Accuracy: 0.557000
-Epoch 100, CIFAR-10 Batch 1:  Loss:     0.0002, Validation Accuracy: 0.565000
+Epoch  1, CIFAR-10 Batch 1:  Loss:     2.2572, Validation Accuracy: 0.219200
+Epoch  2, CIFAR-10 Batch 1:  Loss:     2.1959, Validation Accuracy: 0.313600
+Epoch  3, CIFAR-10 Batch 1:  Loss:     2.0706, Validation Accuracy: 0.335400
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-14-0ebd1bbc35ad&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         batch_i <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span class="ansi-green-fg">for</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels <span class="ansi-green-fg">in</span> helper<span class="ansi-blue-fg">.</span>load_preprocess_training_batch<span class="ansi-blue-fg">(</span>batch_i<span class="ansi-blue-fg">,</span> batch_size<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">             </span>train_neural_network<span class="ansi-blue-fg">(</span>sess<span class="ansi-blue-fg">,</span> optimizer<span class="ansi-blue-fg">,</span> keep_probability<span class="ansi-blue-fg">,</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Epoch {:&gt;2}, CIFAR-10 Batch {}:  &#39;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>epoch <span class="ansi-blue-fg">+</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> batch_i<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span>         print_stats<span class="ansi-blue-fg">(</span>sess<span class="ansi-blue-fg">,</span> batch_features<span class="ansi-blue-fg">,</span> batch_labels<span class="ansi-blue-fg">,</span> cost<span class="ansi-blue-fg">,</span> accuracy<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-11-16fbd0e2a3f4&gt;</span> in <span class="ansi-cyan-fg">train_neural_network</span><span class="ansi-blue-fg">(session, optimizer, keep_probability, feature_batch, label_batch)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>         x<span class="ansi-blue-fg">:</span> feature_batch<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>         y<span class="ansi-blue-fg">:</span> label_batch<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">---&gt; 14</span><span class="ansi-red-fg">         keep_prob: keep_probability})
+</span><span class="ansi-green-intense-fg ansi-bold">     15</span> 
+<span class="ansi-green-intense-fg ansi-bold">     16</span> &#34;&#34;&#34;
+
+<span class="ansi-green-fg">//anaconda/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self, fetches, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-intense-fg ansi-bold">    765</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    766</span>       result = self._run(None, fetches, feed_dict, options_ptr,
+<span class="ansi-green-fg">--&gt; 767</span><span class="ansi-red-fg">                          run_metadata_ptr)
+</span><span class="ansi-green-intense-fg ansi-bold">    768</span>       <span class="ansi-green-fg">if</span> run_metadata<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    769</span>         proto_data <span class="ansi-blue-fg">=</span> tf_session<span class="ansi-blue-fg">.</span>TF_GetBuffer<span class="ansi-blue-fg">(</span>run_metadata_ptr<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">//anaconda/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_run</span><span class="ansi-blue-fg">(self, handle, fetches, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-intense-fg ansi-bold">    963</span>     <span class="ansi-green-fg">if</span> final_fetches <span class="ansi-green-fg">or</span> final_targets<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    964</span>       results = self._do_run(handle, final_targets, final_fetches,
+<span class="ansi-green-fg">--&gt; 965</span><span class="ansi-red-fg">                              feed_dict_string, options, run_metadata)
+</span><span class="ansi-green-intense-fg ansi-bold">    966</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    967</span>       results <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
+
+<span class="ansi-green-fg">//anaconda/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_do_run</span><span class="ansi-blue-fg">(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1013</span>     <span class="ansi-green-fg">if</span> handle <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1014</span>       return self._do_call(_run_fn, self._session, feed_dict, fetch_list,
+<span class="ansi-green-fg">-&gt; 1015</span><span class="ansi-red-fg">                            target_list, options, run_metadata)
+</span><span class="ansi-green-intense-fg ansi-bold">   1016</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1017</span>       return self._do_call(_prun_fn, self._session, handle, feed_dict,
+
+<span class="ansi-green-fg">//anaconda/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_do_call</span><span class="ansi-blue-fg">(self, fn, *args)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1020</span>   <span class="ansi-green-fg">def</span> _do_call<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> fn<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1021</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1022</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1023</span>     <span class="ansi-green-fg">except</span> errors<span class="ansi-blue-fg">.</span>OpError <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1024</span>       message <span class="ansi-blue-fg">=</span> compat<span class="ansi-blue-fg">.</span>as_text<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>message<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">//anaconda/envs/tflearn/lib/python3.5/site-packages/tensorflow/python/client/session.py</span> in <span class="ansi-cyan-fg">_run_fn</span><span class="ansi-blue-fg">(session, feed_dict, fetch_list, target_list, options, run_metadata)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1002</span>         return tf_session.TF_Run(session, options,
+<span class="ansi-green-intense-fg ansi-bold">   1003</span>                                  feed_dict<span class="ansi-blue-fg">,</span> fetch_list<span class="ansi-blue-fg">,</span> target_list<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">-&gt; 1004</span><span class="ansi-red-fg">                                  status, run_metadata)
+</span><span class="ansi-green-intense-fg ansi-bold">   1005</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1006</span>     <span class="ansi-green-fg">def</span> _prun_fn<span class="ansi-blue-fg">(</span>session<span class="ansi-blue-fg">,</span> handle<span class="ansi-blue-fg">,</span> feed_dict<span class="ansi-blue-fg">,</span> fetch_list<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 
